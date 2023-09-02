@@ -4,9 +4,6 @@ body{
     background-color: turquoise;
 }
 #calculator{
-    position: fixed;
-    top:10%;
-    left:40%;
     text-align: center;
     border-radius: 10px;
     width:320px;
