@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+<body>
+    
+        <div id="calculator">
+            <div id="top">
+                <p>CALCULATOR</p>
+            </div>
+                
+            <div id="output">
+                <textarea name="" id="text" cols="20" rows="3"></textarea>
+            </div>
+            <div id="button">
+                <button class="btn">7</button>
+                <button class="btn">8</button>
+                <button class="btn">9</button>
+                <button class="btn white">/</button>
+                <button class="btn">4</button>
+                <button class="btn">5</button>
+                <button class="btn">6</button>
+                <button class="btn white">*</button>
+                <button class="btn">1</button>
+                <button class="btn">2</button>
+                <button class="btn">3</button>
+                <button class="btn white">-</button>
+                <button class="btn">0</button>
+                <button class="btn" id="clear">C</button>
+                <button class="btn white">=</button>
+                <button class="btn white">+</button>
+            </div>
+        </div>
+    <script>
+        let string="";
+        let buttons=document.querySelectorAll(".btn");
+        buttons.forEach((element) => {
+            element.addEventListener("click",(e)=>{
+                event=e.target;
+                if(event.innerHTML=='=')
+                {
+                    string=eval(string);
+                    document.getElementById("text").innerHTML=string;
+                }
+                else if(event.innerHTML=='C')
+                {
+                    string="";
+                    document.getElementById("text").innerHTML=string;
+                }
+                else{
+                    string=string+event.innerHTML;
+                    document.getElementById("text").innerHTML=string;
+                }
+            })
+        });
+    </script>
+</body>
+</html>
